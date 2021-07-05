@@ -1,7 +1,8 @@
 # Deploying the OGP Application Template
 
 This step-by-step guide will walk the reader through the steps needed to have 
-this application running on a hosted environment, with supporting services also set up
+[ts-template](https://github.com/opengovsg/ts-template) running on a hosted environment, 
+with supporting services also set up
 
 ## Registrations
 

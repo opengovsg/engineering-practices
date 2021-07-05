@@ -1,7 +1,7 @@
 # Amazon Web Services
 
-This guide will aid the reader to set up the application for deployments 
-to Amazon Web Services (AWS) using Elastic Beanstalk
+This guide will aid the reader to set up [ts-template](https://github.com/opengovsg/ts-template) 
+for deployments to Amazon Web Services (AWS) using Elastic Beanstalk
 
 _TODO: Build a Terraform config that would do all this_
 
@@ -15,7 +15,9 @@ VPC, segmented into three subnets, gated by NAT Gateways and Security Groups
 
 - [ ] Navigate to the VPC section in AWS Console
 - [ ] Create a VPC named `<app-name>-<environment>`, eg `checkfirst-staging`
-  - [ ] for IPv4, use the AWS default (in the placeholder) - `10.0.0.0/24`
+  - [ ] for IPv4, use `172.31.0.0/16`
+    - The first two octets will be used to describe the VPC, while the third
+      will be use to describe the subnets within the VPC (see below)
   - [ ] for IPv6, select 'Amazon-provided IPv6 CIDR block'
 
 ### Subnets
@@ -26,8 +28,8 @@ for the data store or RDS instance.
 
 Use lower IP address ranges to denote more inward layers within an environment,
 and higher IP address ranges to denote more outward (public-facing) layers. Eg,
-use IP address ranges `172.31.{0-2}.x` for databases, `172.31.{8-10}.x` for EC2
-instances, `172.31.{16-18}.x` for load balancers facing the Internet.
+use IP address ranges `172.31.{0-2}.0/24` for databases, `172.31.{8-10}.0/24` for EC2
+instances, `172.31.{16-18}.0/24` for load balancers facing the Internet.
 
 Take care to have a wide-enough IP range between layers to keep things organised
 
