@@ -1,5 +1,4 @@
-
-# Monitoring Guide
+# Monitoring and alerting
 
 Understanding the state of your infrastructure and systems is essential for ensuring the **reliability** and **stability** of your services. Information about the health and performance of your deployments not only helps the team react to issues, it also gives them the security to make changes with confidence. One of the best ways to gain this insight is with a robust monitoring system that gathers metrics, visualizes data, and alerts operators when things appear to be broken.
 

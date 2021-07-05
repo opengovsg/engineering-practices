@@ -1,4 +1,4 @@
-# Incident Response
+# Incident response and on-calls
 
 Rapid increases in the adoption of our software products and services is a key goal. As usage increases and software evolves, disruptions inevitably become more frequent. Effectively responding to these incidents is critical in ensuring ongoing acceptance of our products and upholding the team reputation and credibility.
 
