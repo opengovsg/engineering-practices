@@ -19,7 +19,6 @@ Practices are in place for the following areas of software engineering:
 - Pre-Commit Checks
   - Linting
   - Secrets
-  - 
 - Checks during Continuous Integration
   - Secrets
   - Security
@@ -53,16 +52,12 @@ Practices are in place for the following areas of software engineering:
   - Databases
   - Load Balancing
   
-## Monitoring and Security
+## Monitoring, Incident Response and Security
 
-- Opsgenie and Rota Management
-- Notifications
-  - AWS Alarms
-  - Pingdom
-- Using Slack for alarm monitoring
+- [Monitoring and alerting](./monitoring-and-incident-response/monitoring.md)
+- [Incident response and on-calls](./monitoring-and-incident-response/incident-response.md)
 - Lighthouse for QC'ing Web Pages
-
-- Penetration tests
+- Security and penetration tests
 
 ## Marketing and Engagement
 
