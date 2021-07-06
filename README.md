@@ -11,7 +11,7 @@ Practices are in place for the following areas of software engineering:
 - Google Groups
 - 1Password
 - IDE
-  - Setting up linters
+  - [Setting up linters](https://github.com/opengovsg/ts-template)
 
 ## Source Control
 
