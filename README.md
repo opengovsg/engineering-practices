@@ -42,7 +42,7 @@ Practices are in place for the following areas of software engineering:
 ## [Deployments](./deploying)
 
 - Using CI/CD
-- [Deploying to AWS, Step-by-Step](./deploying/AWS.md)
+- [Deploying to AWS, Step-by-Step](./deploying/aws.md)
 - Organising and Naming Environments
 - Hosting
 - Scaling
