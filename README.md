@@ -15,7 +15,7 @@ Practices are in place for the following areas of software engineering:
 
 ## Source Control
 
-- Branching
+- [Branching](./source-control/branching.md)
 - Pre-Commit Checks
   - Linting
   - Secrets
