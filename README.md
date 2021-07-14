@@ -7,7 +7,7 @@ Practices are in place for the following areas of software engineering:
 
 ## Developer Environment
 
-- Baseline for Laptops
+- [Laptop policy](./developer-environment/laptops.md)
 - Google Groups
 - 1Password
 - IDE
