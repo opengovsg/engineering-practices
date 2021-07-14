@@ -37,6 +37,10 @@ For `develop`:
 - Pushing to branch should be restricted to certain teams/users, and bots
 - Prevent force pushes
 
+For `staging` and `uat`:
+
+- Pushing to branch should be restricted to certain teams/users
+
 For `release`:
 
 - Require reviews and status checks to pass before merging
