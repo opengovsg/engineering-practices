@@ -17,6 +17,10 @@ Officers who violate this policy will be required to reset their personal creden
 Use of the `homebrew` package manager may occasionally be necessary to install certain programs as part of their development work.
 This is acceptable, although officers should always prefer to use official channels (e.g. App Store, official website).
 
+## iCloud account
+
+Team members may choose to sign up for an iCloud account as part of their use of macOS laptops; however they should register their account using their @open.gov.sg work email instead of their personal email address.
+
 ## Government Standard Image Build (GSIB)
 
 Some officers are issued GSIB laptops, in addition to their macOS machines.
