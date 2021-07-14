@@ -18,7 +18,7 @@ Project credentials are broadly categorised into three types:
 
 ### Root credentials
 
-Root credentials are superadmin credentials that allow broad access to production systems. Examples include AWS root credentials or Cloudflare root credentials (this is not exhaustive).
+Root credentials are superadmin credentials that allow broad access to production systems. Some examples include AWS root credentials or Cloudflare root credentials.
 
 Because any leak of root credentials are extremely damaging, broad sharing of such credentials is **strongly discouraged**. Such credentials - once exploited - are **highly damaging** and may cause irrecoverable harm not only to production systems, users and citizens. As such, only the technical lead and product manager of your team should have access to such credentials.
 
