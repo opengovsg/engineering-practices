@@ -55,7 +55,7 @@ The PR description should be generous in the information it provides to help rev
 
 Even when reviewers are expected to be from the team, and therefore be familiar with context at that point in time, the PR description should stand on its own from an informational perspective. Doing so ensures:
 - The PRs are understandable by other reviewers (e.g. new joiners, other team members)
-- The context will be understandable by your future-self (do not under-estimate the mind's ability to foget details!)
+- The context will be understandable by your future self (do not underestimate the mind's ability to forget details!)
 - The PR description can be used in other processes (e.g. risk assessment for deployments, audits, incident response)
 
 To faciliate writing consistent PRs descriptions, all repositories should have an up to date [PR template](https://docs.github.com/es/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository). PRs should have the following sections:
@@ -81,7 +81,7 @@ Finally, do follow this guidelines:
 
 ### Content and Requirements
 
-All PRs should include tests. If no tests are present on purpose, the PR description should highlight why none were needed.
+All PRs should include tests. If no tests are present on purpose, the PR description should indicate why none were needed.
 
 Repositories should ideally have explicit code coverage targets, and a policy that no PR reduces coverage. It is recommended that the coverage level be an automatically assessed criteria for a PR to be mergeable (i.e. PR which cause coverage to drop are blocked).
 
@@ -95,7 +95,7 @@ Because reviews can take a considerable amount of time, and because engineers ar
 - Tests are present
 - Functional tests have been performed locally
 
-That being said, it is sometimes needed to get feedback early. For these cases, PRs may be opened in an imcomplete state, provided they meet the following requirements:
+That being said, it is sometimes needed to get feedback early. For these cases, PRs may be opened in an incomplete state, provided they meet the following requirements:
 1. They are opened as [Draft PRs](https://github.blog/2019-02-14-introducing-draft-pull-requests/)
 2. The PR title includes a leading string `[WIP] ` in the PR title
 3. [Optional] Add a label `wip`
@@ -110,7 +110,7 @@ All PRs at OGP require (at least) 1 approval to be merged.
 
 Teams should strive to close PRs in a timely manner. Teams should ideally have an SLA policy for review time and merging. When a repository has many opened PRs, it causes context switching overheads to engineers.
 
-PR owners are responsible for merging their PR. If a PR is not getting attention from the team, it is up to the PR owner to ask for reviews and approvals. 
+PR owners are responsible for merging their PRs. If a PR is not getting attention from the team, it is up to the PR owner to ask for reviews and approvals. 
 
 It is recommended that all repositories adopt a "Stale-PR" policy. PRs which see no activity and are not getting merged should be closed automatically.
 
@@ -155,8 +155,8 @@ Discussions on code styles preferences are typically not productive in PRs and a
 PR owners are notified of comments as they happen, and this is noisy when a slow trickle of comments is submitted. To prevent that, reviewers should submit all of their comments in one go by using github's review mechanism. This helps reviewers themselves, since a comment or question they had early on may answer itself as they progress through the PR review.
 
 When submitting a review, github classification should be use with care by reviewers, as follows:
-- `Comment`: You have questions or comments and are thus so far non-commital. Should someone else were to approve the PR, you would be generally OK with the PR being merged as-is
-- `Approve`: You agree with the changeset in the PR, and stand by it as if you had writtem the code yourself
+- `Comment`: You have questions or comments and are thus so far non-committal. Should someone else were to approve the PR, you would be generally OK with the PR being merged as-is
+- `Approve`: You agree with the changeset in the PR, and stand by it as if you had written the code yourself
 - `Request changes`:  You have spotted serious flaws in the PR that must be addressed. PR must not be merged in its current state
 
 The PR owner is expected to answer questions and comments in the PR. When a particular PR comment thread is concluded to the satisfaction of all involved, the thread should be marked resolved through the button `Resolve Conversation`.
