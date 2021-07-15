@@ -166,7 +166,7 @@ PR reviews are iterative activities. Every comment thread in the PR may yield a 
 
 PR comments often yield improvements to the PR, where the PR owner modifies the code to incoporate feedback. Once changes have been pushed to the PR, the PR owner should notify the reviewer that the PR is ready for another round of reviews. This can be done with a PR-level comment, where the PR owner explicitly mentions the affected reviewers.
 
-To make successive rounds of review easier, PR owners should NOT force push changes into the PR. Instead, all changes should be pushed as new commits, such that when reviewers do their new round of review, they can easily identify what has changed since their previous comments. In fact, a common strategy reviewers adopt is to look at just the new commit first, to get a sense of what is new, before looking at the PR overall again.
+To make successive rounds of review easier, PR owners should NOT force push changes into the PR. Instead, all changes should be pushed as new commits, such that when reviewers do their new round of review, they can easily identify what has changed. In fact, a common strategy reviewers adopt is to look at just the new commits first, before looking at the PR overall again.
 
 It is worth noting that when a question is being asked by a reviewer, it is typically a sign that the code is lacking some level of clarity. While it is possible a simple, straight answer can be given in the comment thread, PR owners should take the question seriously, and consider whether the code itself can be made clearer.
 
