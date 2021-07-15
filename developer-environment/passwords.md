@@ -4,9 +4,9 @@ Developers are expected to use their 1Password account to generate and save *all
 
 ## Personal credentials
 
-Personal account credentials scoped to you should be *generated* and *stored* in the Private vault. Examples include their AWS account, Cloudflare account etc.
+Personal account credentials are credentials that are scoped to you as an individual.
 
-Where 2 Factor Authentication is used, developers are *encouraged* to use Authenticator on their mobile devices instead of 1Password.
+As far as possible, this should be *generated* and *stored* in the Private vault. Examples include your AWS account or Cloudflare account etc.
 
 ## Project credentials
 
@@ -26,12 +26,18 @@ If you observe the frequent use of root credentials, please sound it out to your
 
 ### Production credentials
 
-Production credentials are secrets used by production systems. These should be stored in the relevant production vault for the project. Examples include Twilio API keys or user-specific API keys.
+Production credentials are secrets used by production systems. These should be stored in the relevant production vault for the project. Examples include Twilio API keys used in production to send SMSes.
+
+API keys used in production **should not** be shared with staging or other non-production environments.
 
 Only full-time employees of the relevant project team should have access to these credentials - interns and volunteers should not.
 
 ### Staging credentials
 
-Staging credentials are secrets used by staging environments. These should be stored in the relevant staging vault for the project, **separately from production credentials**.
+Staging credentials are secrets used by staging environments. These should be **stored in the relevant staging vault for the project, separately from production credentials**.
 
-Apart from full-time employees, interns can also have access to these credentials. This allows interns to have the same development experience as full-timers, without being able to cause lasting harm to the organisation.
+Apart from full-time employees, interns on the relevant project team can also have access to these credentials. This allows interns to have a similar development experience as full-time employees, without having access to credentials that can cause lasting harm to the organisation.
+
+## Two-factor authentication
+
+Developers are **strongly encouraged** to enable 2FA when available. As far as possible, the 2nd factor should be stored separately from 1Password, using e.g. Authenticator on the mobile device.
