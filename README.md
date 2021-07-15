@@ -15,6 +15,7 @@ Practices are in place for the following areas of software engineering:
 
 ## Source Control
 
+- [GitHub](./source-control/github.md)
 - [Branching](./source-control/branching.md)
 - Pre-Commit Checks
   - Linting
