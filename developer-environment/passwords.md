@@ -38,6 +38,6 @@ Staging credentials are secrets used by staging environments. These should be **
 
 Apart from full-time employees, interns on the relevant project team can also have access to these credentials. This allows interns to have a similar development experience as full-time employees, without having access to credentials that can cause lasting harm to the organisation.
 
-## Two-factor authentication
+## Two-factor authentication (2FA)
 
-Developers are **strongly encouraged** to enable 2FA when available. As far as possible, the 2nd factor should be stored separately from 1Password, using e.g. Authenticator on the mobile device.
+Developers are **strongly encouraged** to enable 2FA when available. The 2nd factor should be stored separately from 1Password, using e.g. Authenticator on your mobile device.
