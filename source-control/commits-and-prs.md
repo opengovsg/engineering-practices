@@ -120,7 +120,7 @@ It is recommended that all repositories adopt a "Stale-PR" policy. PRs which see
 If priorities shift, and a PR cannot get the reviews it requires, the PR author is encouraged to close the PR proactively, and re-open it later, when the team has bandwidth to tend to the work.
 
 
-## Reviewing Pull Requests
+## PR Reviews
 
 All engineers are required to review PRs as part of their duties. 
 
@@ -168,12 +168,33 @@ The PR author is expected to answer questions and comments in the PR. When a par
 
 PR reviews are iterative activities. Every comment thread in the PR may yield a deep discussions where participants go back and forth on a particular issue.
 
-PR comments often yield improvements to the PR, where the PR author modifies the code to incoporate feedback. Once changes have been pushed to the PR, the PR author should notify the reviewer that the PR is ready for another round of reviews. This can be done with a PR-level comment, where the PR author explicitly mentions the affected reviewers.
+PR comments often yield improvements to the PR, where the PR author modifies the code to incoporate feedback. Once changes have been pushed to the PR, the PR author should notify the reviewer that the PR is ready for another round of review. This can be done with a PR-level comment, where the PR author explicitly mentions the affected reviewers.
 
-To make successive rounds of review easier, PR authors should NOT force push changes into the PR. Instead, all changes should be pushed as new commits, such that when reviewers do their new round of review, they can easily identify what has changed. In fact, a common strategy reviewers adopt is to look at just the new commits first, before looking at the PR overall again.
+To make successive rounds of review easier, PR authors should not force push changes into the PR. Instead, changes should be pushed as new commits, such that when reviewers do their new round of review, they can easily identify what has changed. In fact, a common strategy reviewers adopt is to look at just the new commits first, before looking at the PR overall again.
 
-It is worth noting that when a question is being asked by a reviewer, it is typically a sign that the code is lacking some level of clarity. While it is possible a simple, straight answer can be given in the comment thread, PR authors should take the question seriously, and consider whether the code itself can be made clearer.
+It is worth noting that when a question is being asked by a reviewer, it is a sign that the code is lacking some level of clarity. While it is possible a simple, straight answer can be given in the comment thread, PR authors should take the question seriously, and consider whether the code itself can be made clearer.
 
+### Pairing reviews
+
+It can be helpful to pair through reviews. A reviewer may ask the PR author for assistance in a live setting. Context can be provided on the spot, changes and improvements can be discussed and implemented immediately.
+
+When authors expect their PR to be particularly complicated for whatever reason, they can schedule a review pairing session with another developer proactively.
+
+### Conflict resolution
+
+While the hope is that consensus and agreement can be reached in PR reviews, deep-seated disagreements sometimes occur. This section provides some strategies to deal with such situations.
+
+- Stay polite and respectful at all time
+- Do not reply when flustered
+- Consider the position of the other developer carefully to see the merits/flaws of their arguments
+- Explain in different wordings or give alternative examples or code samples that illustrate your points better
+- Indicate you understand the alternative proposal or system, but you don't agree with it
+
+As asynchronous written discussions, comment threads do not convey tone of voice or body language. When disagreement occurs, It can be immensely helpful to call for a face to face meeting, in person or over zoom, to go over the contentious item live. An agreement can more easily be reached in person.
+
+Disagreement sometimes occur when both parties understand each-other solutions well, but disagree on the tradeoffs that should apply for a particular situation, and that is what driving their divide on the implementation. Such cases should probably be discussed in the broader team, or escalated. The PM or Tech Lead may have to clarify which trade off we wish to pursue as a team.
+
+When a solution is eventually picked, you may still disagree with it, but your commitment to deliver on the decision is expected anyway.
 
 ## Merging Pull Requests
 
