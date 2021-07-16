@@ -155,10 +155,14 @@ Discussions in PRs on code style are typically not productive and are discourage
 
 PR authors are notified of comments as they happen, and this is noisy when a slow trickle of comments is submitted. To prevent that, reviewers should submit all of their comments in one go by using github's review mechanism. This helps reviewers themselves, since a comment or question they had early on may answer itself as they progress through the PR review.
 
+![Start a Review](./assets/github_start_review.png)
+
 When submitting a review, github classification should be use with care by reviewers, as follows:
 - `Comment`: You have questions or comments and are thus so far non-committal. Should someone else approve the PR, you would be generally OK with the PR being merged as-is
 - `Approve`: You agree with the changeset in the PR, and stand by it as if you had written the code yourself
 - `Request changes`: You have spotted serious flaws in the PR that must be addressed. PR must not be merged in its current state
+
+![Submit A Review Dialog](./assets/github_finish_review.png)
 
 The PR author is expected to answer questions and comments in the PR. When a particular PR comment thread is concluded to the satisfaction of all involved, the thread should be marked resolved through the button `Resolve Conversation`.
 
