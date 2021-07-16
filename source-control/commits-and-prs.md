@@ -90,7 +90,9 @@ OGP recommends repos use [coveralls](https://coveralls.io/) which integrates wel
 
 ### Draft PRs
 
-Once a PR is opened, it is expected to be reviewed in a timely manner. Engineers should proactively check the repositories their teams own, and contribute PR reviews before starting entirely new work. Teams should set aggressive targets for PR review timeliness. Ideally a PR author should receive the first feedback to a PR within 1 business day.
+Once a PR is opened, it is expected to be reviewed in a timely manner. Ideally, PR authors should receive their first review in 1 business day.
+
+To achieve this fast feedback, Teams are advised to set up [github-slack integrations](https://slack.com/intl/en-sg/help/articles/232289568-GitHub-for-Slack), such that the team channel is notified of new PRs. Additionally engineers should check with their team members, if anyone needs reviews before starting entirely new work.
 
 Because reviews can take a considerable amount of time, and because engineers are notified when PRs are opened, PR authors should be considerate when opening PRs. PRs should only be opened when they really are ready for review. In practice, this mean:
 - PR Description is complete
@@ -111,7 +113,7 @@ When the PR is ready for review, the PR author must transition it to **Ready for
 
 All PRs at OGP require (at least) 1 approval to be merged.
 
-Teams should strive to close PRs in a timely manner. Considering that having many opened PR causes context switching overheads to engineers, teams should ideally have an SLA policy for review time and merging.
+Considering that having many opened PRs causes context switching overheads to engineers, teams should strive to close PRs in a timely manner. Ideally PRs should be concluded and closed within 3 weeks, which should be enough to accomodate several rounds of reviews.
 
 PR authors are ultimately responsible for merging their PRs. If a PR is not getting attention from the team, it is up to the PR author to ask for reviews and approvals.
 
