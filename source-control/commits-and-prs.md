@@ -65,7 +65,7 @@ To faciliate writing consistent PRs descriptions, all repositories should have a
 - Tests
 - Risks
 
-The Risk section is one of the most important part of the PR. The PR owner indicates therein he/she has done the required thinking of what could go wrong (best case - worst case) when the code is live, how errors might cascade through the system, and how likely it really is to happen. Risk is a subjective assessment, and obviously, no one opens PRs thinking things are likely to break. Still, all changes carry risk, and engineers are notoriously bad at evaluating risks. The risk section is a reminder for the PR owner to think about risks. It also helps reviewers validate the thinking, and comment with their own evaluation if necessary.
+The Risk section is one of the most important part of the PR. The PR author indicates therein he/she has done the required thinking of what could go wrong (best case - worst case) when the code is live, how errors might cascade through the system, and how likely it really is to happen. Risk is a subjective assessment, and obviously, no one opens PRs thinking things are likely to break. Still, all changes carry risk, and engineers are notoriously bad at evaluating risks. The risk section is a reminder for the PR author to think about risks. It also helps reviewers validate the thinking, and comment with their own evaluation if necessary.
 
 Risks typically is a combination of 2 factors:
 - **Impact**: what is changed, how many systems or sub systems can thus potentially be affected? Are these system critical? 
@@ -90,9 +90,9 @@ OGP recommends repos use [coveralls](https://coveralls.io/) which integrates wel
 
 ### Draft PRs
 
-Once a PR is opened, it is expected to be reviewed in a timely manner. Engineers should proactively check the repositories their teams own, and contribute PR reviews before starting entirely new work. Teams should set aggressive targets for PR review timeliness. Ideally a PR owner should receive the first feedback to a PR within 1 business day.
+Once a PR is opened, it is expected to be reviewed in a timely manner. Engineers should proactively check the repositories their teams own, and contribute PR reviews before starting entirely new work. Teams should set aggressive targets for PR review timeliness. Ideally a PR author should receive the first feedback to a PR within 1 business day.
 
-Because reviews can take a considerable amount of time, and because engineers are notified when PRs are opened, PR owners should be considerate when opening PRs. PRs should only be opened when they really are ready for review. In practice, this mean:
+Because reviews can take a considerable amount of time, and because engineers are notified when PRs are opened, PR authors should be considerate when opening PRs. PRs should only be opened when they really are ready for review. In practice, this mean:
 - PR Description is complete
 - Changeset is complete
 - Tests are present
@@ -103,9 +103,9 @@ It is however sometimes needed to get feedback early. For these cases, PRs may b
 2. The PR title includes a leading string `[WIP] ` in the PR title (WIP stands for "Work In Progress")
 3. [Optional] Add a label `wip`
 
-Draft PRs are not expected to receive proactive reviews from engineers. Instead the PR owner may seek feedback from specific folks as needed.
+Draft PRs are not expected to receive proactive reviews from engineers. Instead the PR author may seek feedback from specific folks as needed.
 
-When the PR is ready for review, the PR owner must transition it to **Ready for Review**, and remove the leading `[WIP]` string from the PR title.
+When the PR is ready for review, the PR author must transition it to **Ready for Review**, and remove the leading `[WIP]` string from the PR title.
 
 ### Closing PRs
 
@@ -113,11 +113,11 @@ All PRs at OGP require (at least) 1 approval to be merged.
 
 Teams should strive to close PRs in a timely manner. Considering that having many opened PR causes context switching overheads to engineers, teams should ideally have an SLA policy for review time and merging.
 
-PR owners are ultimately responsible for merging their PRs. If a PR is not getting attention from the team, it is up to the PR owner to ask for reviews and approvals.
+PR authors are ultimately responsible for merging their PRs. If a PR is not getting attention from the team, it is up to the PR author to ask for reviews and approvals.
 
 It is recommended that all repositories adopt a "Stale-PR" policy. PRs which see no activity and are not getting merged should be closed automatically.
 
-If priorities shift, and a PR cannot get the reviews it requires, the PR owner is encouraged to close the PR proactively, and re-open it later, when the team has bandwidth to tend to the work.
+If priorities shift, and a PR cannot get the reviews it requires, the PR author is encouraged to close the PR proactively, and re-open it later, when the team has bandwidth to tend to the work.
 
 
 ## Reviewing Pull Requests
@@ -136,7 +136,7 @@ Code is read much more than it is written. PR reviews ensure that changes are le
 
 ### Manners
 
-PR reviews are done over comment threads in github. As asynchronous discussions, PR comment threads can cause anxiety for both PR owners and reviewers when disagrements surface.
+PR reviews are done over comment threads in github. As asynchronous discussions, PR comment threads can cause anxiety for both PR authors and reviewers when disagrements surface.
 
 All participants in PR reviews should maintain a level head, and abide by some simple rules of etiquette:
 - Assume good intent
@@ -147,7 +147,7 @@ All participants in PR reviews should maintain a level head, and abide by some s
 
 ### Content
 
-Where possible, when a reviewer has an idea for an alternative implementation, he/she should provide some sample code to explain the different approach (use github's [code suggestion](https://docs.github.com/en/github/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request) feature for that)
+Where possible, when a reviewer has an suggestion for an alternative implementation, he/she should provide some sample code to explain the different approach (use github's [code suggestion](https://docs.github.com/en/github/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request) feature for that)
 
 Discussions in PRs on code style are typically not productive and are discouraged. To make this a non-issue, repositories should adopt opinionated code formatters, which will help to ensure a consistent coding style across repos, and eliminate discussions on syntax and style. At OGP, [prettier](https://prettier.io/) has been adopted as the organisation-wide formatter. All repos should use it, and teams are strongly encouraged to set up formatter pre-commit hooks with [husky](https://typicode.github.io/husky/).
 
@@ -158,17 +158,17 @@ PR owners are notified of comments as they happen, and this is noisy when a slow
 When submitting a review, github classification should be use with care by reviewers, as follows:
 - `Comment`: You have questions or comments and are thus so far non-committal. Should someone else approve the PR, you would be generally OK with the PR being merged as-is
 - `Approve`: You agree with the changeset in the PR, and stand by it as if you had written the code yourself
-- `Request changes`:  You have spotted serious flaws in the PR that must be addressed. PR must not be merged in its current state
+- `Request changes`: You have spotted serious flaws in the PR that must be addressed. PR must not be merged in its current state
 
-The PR owner is expected to answer questions and comments in the PR. When a particular PR comment thread is concluded to the satisfaction of all involved, the thread should be marked resolved through the button `Resolve Conversation`.
+The PR author is expected to answer questions and comments in the PR. When a particular PR comment thread is concluded to the satisfaction of all involved, the thread should be marked resolved through the button `Resolve Conversation`.
 
 PR reviews are iterative activities. Every comment thread in the PR may yield a deep discussions where participants go back and forth on a particular issue.
 
-PR comments often yield improvements to the PR, where the PR owner modifies the code to incoporate feedback. Once changes have been pushed to the PR, the PR owner should notify the reviewer that the PR is ready for another round of reviews. This can be done with a PR-level comment, where the PR owner explicitly mentions the affected reviewers.
+PR comments often yield improvements to the PR, where the PR author modifies the code to incoporate feedback. Once changes have been pushed to the PR, the PR author should notify the reviewer that the PR is ready for another round of reviews. This can be done with a PR-level comment, where the PR author explicitly mentions the affected reviewers.
 
-To make successive rounds of review easier, PR owners should NOT force push changes into the PR. Instead, all changes should be pushed as new commits, such that when reviewers do their new round of review, they can easily identify what has changed. In fact, a common strategy reviewers adopt is to look at just the new commits first, before looking at the PR overall again.
+To make successive rounds of review easier, PR authors should NOT force push changes into the PR. Instead, all changes should be pushed as new commits, such that when reviewers do their new round of review, they can easily identify what has changed. In fact, a common strategy reviewers adopt is to look at just the new commits first, before looking at the PR overall again.
 
-It is worth noting that when a question is being asked by a reviewer, it is typically a sign that the code is lacking some level of clarity. While it is possible a simple, straight answer can be given in the comment thread, PR owners should take the question seriously, and consider whether the code itself can be made clearer.
+It is worth noting that when a question is being asked by a reviewer, it is typically a sign that the code is lacking some level of clarity. While it is possible a simple, straight answer can be given in the comment thread, PR authors should take the question seriously, and consider whether the code itself can be made clearer.
 
 
 ## Merging Pull Requests
