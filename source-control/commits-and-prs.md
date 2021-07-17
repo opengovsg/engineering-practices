@@ -65,7 +65,7 @@ To faciliate writing consistent PRs descriptions, all repositories should have a
 - Tests
 - Risks
 
-The Risk section is one of the most important part of the PR. The PR author indicates therein he/she has done the required thinking of what could go wrong (best case - worst case) when the code is live, how errors might cascade through the system, and how likely it really is to happen. Risk is a subjective assessment, and obviously, no one opens PRs thinking things are likely to break. Still, all changes carry risk, and engineers are notoriously bad at evaluating risks. The risk section is a reminder for the PR author to think about risks. It also helps reviewers validate the thinking, and comment with their own evaluation if necessary.
+The Risk section is one of the most important parts of the PR. The PR author indicates therein he/she has done the required thinking of what could go wrong (best case - worst case) when the code is live, how errors might cascade through the system, and how likely it really is to happen. Risk is a subjective assessment, and obviously, no one opens PRs thinking things are likely to break. Still, all changes carry risk, and engineers are notoriously bad at evaluating risks. The risk section is a reminder for the PR author to think about risks. It also helps reviewers validate the thinking, and comment with their own evaluation if necessary.
 
 Risks typically is a combination of 2 factors:
 - **Impact**: what is changed, how many systems or sub systems can thus potentially be affected? Are these system critical? 
@@ -153,7 +153,7 @@ Where possible, when a reviewer has an suggestion for an alternative implementat
 
 Discussions in PRs on code style are typically not productive and are discouraged. To make this a non-issue, repositories should adopt opinionated code formatters, which will help to ensure a consistent coding style across repos, and eliminate discussions on syntax and style. At OGP, [prettier](https://prettier.io/) has been adopted as the organisation-wide formatter. All repos should use it, and teams are strongly encouraged to set up formatter pre-commit hooks with [husky](https://typicode.github.io/husky/).
 
-### WorkFlow
+### Workflow
 
 PR authors are notified of comments as they happen, and this is noisy when a slow trickle of comments is submitted. To prevent that, reviewers should submit all of their comments in one go by using github's review mechanism. This helps reviewers themselves, since a comment or question they had early on may answer itself as they progress through the PR review.
 
@@ -202,6 +202,6 @@ When a solution is eventually picked, you may still disagree with it, but your c
 
 PRs at OGP require at least 1 approval in order to be merged.
 
-In case of contributions from open source contributors, or contributions from egineers not members of the team owning the repo, one approval from a member of the owning team should be gathered.
+In case of contributions from open source contributors, or contributions from engineers who are not members of the team owning the repo, one approval from a member of the owning team should be gathered.
 
 When Merging PRs into the develop branch. Use github's "Squash and merge" strategy, as it makes reverts trivial.
