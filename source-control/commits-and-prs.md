@@ -60,8 +60,8 @@ Even when reviewers are expected to be from the team, and therefore be familiar 
 - The PR description can be used in other processes (e.g. risk assessment for deployments, audits, incident response)
 
 To faciliate writing consistent PR descriptions, all repositories should have an up to date [PR template](https://docs.github.com/es/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository). PRs should have the following sections:
-- Problem
-- Solution
+- Context
+- Approach
 - Tests
 - Risks
 
