@@ -46,12 +46,13 @@ Practices are in place for the following areas of software engineering:
 - Organising and Naming Environments
 - Hosting
 - Scaling
-- Choosing and Configuring Components
+- [Infrastructure guide](https://docs.google.com/document/d/1vQLuUeSOU9VEffTSF7wFRLqw7LNkrEA4rcd-dYvdOlU/edit?usp=sharing)
   - Domain Name Service (DNS)
   - Content Delivery Service (CDN)
   - Databases
   - Load Balancing
-  
+- [Backup guide](https://docs.google.com/document/d/1E7wk6hmbVkyX5rRHVDVhpy3vpQW0wqChcprlBoojc9k/edit?usp=sharing)
+- [Production guide](https://docs.google.com/document/d/1Uxui35zRHYJ4CZxYhNXON-1e2QjLQQLn9Q55dgzI_k0/edit?usp=sharing)
 ## Monitoring, Incident Response and Security
 
 - [Monitoring and alerting](./monitoring-and-incident-response/monitoring.md)
