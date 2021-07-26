@@ -192,7 +192,7 @@ While the hope is that consensus and agreement can be reached in PR reviews, dee
 - Explain in different wordings or give alternative examples or code samples that illustrate your points better
 - Indicate you understand the alternative proposal or system, but you don't agree with it
 
-As asynchronous written discussions, comment threads do not convey tone of voice or body language. When disagreement occurs, It can be immensely helpful to call for a face to face meeting, in person or over zoom, to go over the contentious item live. An agreement can more easily be reached in person.
+As asynchronous written discussions, comment threads do not convey tone of voice or body language. When disagreements occur, it can be immensely helpful to call for a face to face meeting, in person or over zoom, to go over the contentious item live. An agreement can more easily be reached in person.
 
 Disagreement sometimes occur when both parties understand each-other solutions well, but disagree on the tradeoffs that should apply for a particular situation, and that is what driving their divide on the implementation. Such cases should probably be discussed in the broader team, or escalated. The PM or Tech Lead may have to clarify which trade off we wish to pursue as a team.
 
