@@ -65,6 +65,8 @@ To faciliate writing consistent PR descriptions, all repositories should have an
 - Tests
 - Risks
 
+A [sample PR template](https://github.com/opengovsg/ts-template/blob/develop/.github/pull_request_template.md) is available for reference in the ts-template repository.
+
 The Risk section is one of the most important parts of the PR. The PR author indicates therein he/she has done the required thinking of what could go wrong (best case - worst case) when the code is live, how errors might cascade through the system, and how likely it really is to happen. Risk is a subjective assessment, and obviously, no one opens PRs thinking things are likely to break. Still, all changes carry risk, and engineers are notoriously bad at evaluating risks. The risk section is a reminder for the PR author to think about risks. It also helps reviewers validate the thinking, and comment with their own evaluation if necessary.
 
 Risks typically is a combination of 2 factors:
