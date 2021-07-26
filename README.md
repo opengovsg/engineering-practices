@@ -22,7 +22,7 @@ Practices are in place for the following areas of software engineering:
 - Checks during Continuous Integration
   - Secrets
   - Security
-- Code Review Process
+- [Code Review Processes](./source-control/commits-and-prs.md)
 
 ## Coding
 
