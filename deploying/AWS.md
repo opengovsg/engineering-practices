@@ -13,12 +13,13 @@ Create an environment (staging for now, production later) that consists of one
 VPC, segmented into three subnets, gated by NAT Gateways and Security Groups
 
 
-- [ ] Navigate to the VPC section in AWS Console
+- [ ] Navigate to the VPC -> Your VPCs in AWS Console
 - [ ] Create a VPC named `<app-name>-<environment>`, eg `checkfirst-staging`
   - [ ] for IPv4, use `172.31.0.0/16`
     - The first two octets will be used to describe the VPC, while the third
       will be use to describe the subnets within the VPC (see below)
   - [ ] for IPv6, select 'Amazon-provided IPv6 CIDR block'
+- [ ] Enable DNS hostnames for the newly-created VPC
 
 ### Subnets
 
@@ -55,7 +56,7 @@ of the VPC, so that your application can both send and receive requests
 ### NAT Gateways
 
 Create one NAT Gateway for each availability zone, attaching each one to the 
-corresponding public subnet
+corresponding **public** subnet
 
 ***NOTE:** NAT Gateways are expensive and are limited to 5 per account. If 
 setting up for staging, consider setting up just one NAT Gateway on a chosen
@@ -92,6 +93,8 @@ Define network traffic routing for subnets within the VPC
 - [ ] Create one route table that routes all traffic (0.0.0.0/0) via the NAT
       Gateway that sits on `<app-name>-<environment>-public-1c`; associate this
       route table with `<app-name>-<environment>-ec2-1c`
+- [ ] Create a route table that routes all traffic (0.0.0.0/0, ::/0) via the
+      Internet Gateway; associate this with the rds subnets
 
 ### Security Groups
 
@@ -142,6 +145,7 @@ multi-AZ deployment, disk-level encryption and IAM authentication
         host so that the database can be accessed from local machine via the
         bastion host
   - [ ] Authentication - Password and IAM
+  - [ ] Specify an initial database name under additional configuration
 
 - [ ] Populate your database with initial schema
   - [ ] Create a .env file with the following env vars set:
@@ -150,8 +154,11 @@ multi-AZ deployment, disk-level encryption and IAM authentication
     - `DB_USERNAME`
     - `DB_PASSWORD`
   - [ ] Source .env file into your shell
+  - [ ] `cd backend`
   - [ ] Run `npx sequelize db:migrate`
   - [ ] Ensure that schema set up, then delete .env and close shell
+  - [ ] If you are not planning to have permanent public Internet access to the 
+        RDS server, delete the relevant route table
 
 ## AWS Certificate Manager (ACM)
 
@@ -183,7 +190,7 @@ and the load balancers that gate access to them
   - Environment name `<application-name>-<environment>`
   - Platform `Docker running on 64bit Amazon Linux 2`, latest version
   - Application code `Sample application`
-  - Configure more options
+- [ ] Configure more options
 - [ ] Set configuration preset to High availability
   - You may wish to experiment with Spot instances at your own peril
 - [ ] Network
