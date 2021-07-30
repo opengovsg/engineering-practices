@@ -9,7 +9,7 @@ Practices are in place for the following areas of software engineering:
 
 - [Laptop policy](./developer-environment/laptops.md)
 - Google Groups
-- 1Password
+- [Passwords and credentials](developer-environment/passwords.md)
 - IDE
   - [Setting up linters](https://github.com/opengovsg/ts-template)
 
