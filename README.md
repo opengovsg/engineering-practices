@@ -28,7 +28,7 @@ Practices are in place for the following areas of software engineering:
 
 - Backend
   - RESTful API routing organisation
-  - Using Object Resource Mappers (ORMs)
+  - Using Object Relational Mappers (ORMs)
 
 - Frontend
   - Template Screens
