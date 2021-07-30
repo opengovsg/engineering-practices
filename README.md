@@ -28,7 +28,7 @@ Practices are in place for the following areas of software engineering:
 
 - Backend
   - RESTful API routing organisation
-  - Using Object Resource Mappers (ORMs)
+  - Using Object Relational Mappers (ORMs)
 
 - Frontend
   - Template Screens
@@ -53,12 +53,18 @@ Practices are in place for the following areas of software engineering:
   - Load Balancing
 - [Backup guide](https://docs.google.com/document/d/1E7wk6hmbVkyX5rRHVDVhpy3vpQW0wqChcprlBoojc9k/edit?usp=sharing)
 - [Production guide](https://docs.google.com/document/d/1Uxui35zRHYJ4CZxYhNXON-1e2QjLQQLn9Q55dgzI_k0/edit?usp=sharing)
+
 ## Monitoring, Incident Response and Security
 
 - [Monitoring and alerting](./monitoring-and-incident-response/monitoring.md)
 - [Incident response and on-calls](./monitoring-and-incident-response/incident-response.md)
 - Lighthouse for QC'ing Web Pages
 - Security and penetration tests
+
+## Useful starter code templates
+
+- [ts-template](https://github.com/opengovsg/ts-template) - Web application template
+- [ts-job-template](https://github.com/opengovsg/ts-job-template) - Scheduled batch jobs that execute on AWS Elastic Container Service
 
 ## Marketing and Engagement
 
