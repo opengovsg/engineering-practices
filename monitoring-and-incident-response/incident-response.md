@@ -42,6 +42,18 @@ Do also note that the on-call engineer and incident manager are roles - it can b
 4. If there is an ETA for restoration, what is it?
 5. When & where will the next update be?
 
+## Alerts and priority levels
+
+Incident priority levels are a measurement of urgency. Typically, this depends on the impact an incident has on the user or damage to the organisation.
+
+| Priority  | Description                                                                         | Examples                                                                                                         |
+|---------- |------------------------------------------------------------------------------------ |----------------------------------------------------------------------------------------------------------------- |
+| P1        | A critical incident with great impact. Requires immediate attention by on-call.     | A customer-facing service is down for all customers. Confidentiality or privacy is breached. User data loss.     |
+| P2        | A major incident with high impact. Requires immediate attention by on-call.         | Customer-facing service is unavailable for a subset of customers. Core functionality is significantly impacted.  |
+| P3        | An incident with moderate impact. Does not require immediate attention by on-call.  | Minor inconvenience to users, with a reasonable workaround available. Usable performance degradation.            |
+| P4        | A minor incident with low impact. Does not require immediate attention by on-call.  | UI render bug that does not impede user functionality or cause brand damage.                                     |
+| P5        | Non-incidents, informational only. Does not require any action by on-call.          | Used for informational purposes only.                                                                            |
+
 ## Roles and responsibilities
 
 ### On-call Engineer
@@ -97,7 +109,7 @@ Do also note that the on-call engineer and incident manager are roles - it can b
 
 ### RACI Matrix for Incident Response
 
-**R** - Responsible	**A** - Accountable	**C** - Consulted	**I** - Informed
+**R** - Responsible **A** - Accountable **C** - Consulted **I** - Informed
 
 <table>
   <tr>
@@ -220,7 +232,7 @@ A runbook is the documented form of a team’s procedures for conducting a task 
 
 A postmortem is a written record of an incident, its impact, the actions taken to mitigate or resolve it, the root cause(s), and planned follow-up actions to prevent the incident from recurring.
 
-Writing a postmortem is not punishment—it is a learning opportunity for the entire team. 
+Writing a postmortem is not punishment—it is a learning opportunity for the entire team.
 
 For a postmortem to be truly blameless, it must focus on identifying the contributing causes of the incident without indicting any individual or team for bad or inappropriate behavior. A blamelessly written postmortem assumes that everyone involved in an incident had good intentions and did the right thing with the information they had. If a culture of finger pointing and shaming individuals or teams for doing the "wrong" thing prevails, people will not bring issues to light for fear of punishment.
 
