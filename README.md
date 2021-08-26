@@ -54,12 +54,15 @@ Practices are in place for the following areas of software engineering:
 - [Backup guide](https://docs.google.com/document/d/1E7wk6hmbVkyX5rRHVDVhpy3vpQW0wqChcprlBoojc9k/edit?usp=sharing)
 - [Production guide](https://docs.google.com/document/d/1Uxui35zRHYJ4CZxYhNXON-1e2QjLQQLn9Q55dgzI_k0/edit?usp=sharing)
 
-## Monitoring, Incident Response and Security
+## Monitoring and Incident Response
 
 - [Monitoring and alerting](./monitoring-and-incident-response/monitoring.md)
 - [Incident response and on-calls](./monitoring-and-incident-response/incident-response.md)
 - Lighthouse for QC'ing Web Pages
-- Security and penetration tests
+
+## Security
+
+- [Vulnerability detection and remediation](./security/vulnerabilities.md)
 
 ## Useful starter code templates
 
