@@ -21,7 +21,7 @@ OGP uses [Snyk.io](https://snyk.io) for static analysis and security testing. Ea
 
 ### SAST remediation standards
 
-OGP engineers expected to adhere to the following standards for static analysis and dependency upgrades:
+OGP engineers are expected to adhere to the following standards for static analysis and dependency upgrades:
 
 - Critical/High - issues to be *triaged* within 7 calendar days
 - Medium/Low - issues to be *triaged* within 14 calendar days
