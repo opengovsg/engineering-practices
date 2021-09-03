@@ -1,6 +1,6 @@
-# Maintenance standards
+# Maintenance guidelines
 
-Out of all the phases in a software development lifecycle, the maintenance phase is the longest. As OGP matures, there will be an increasingly long tail of projects that we will need to maintain.
+Out of all the phases in a software development lifecycle, the maintenance phase is the longest. As OGP matures, there will be an increasingly long tail of projects that we will need to maintain in order to ensure application functionality and uphold security for our users.
 
 ## Documentation
 
