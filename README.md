@@ -64,6 +64,9 @@ Practices are in place for the following areas of software engineering:
 
 - [Vulnerability detection and remediation](./security/vulnerabilities.md)
 
+## Project maintenance
+- [Maintenance guidelines](./maintenance/maintenance.md)
+
 ## Useful starter code templates
 
 - [ts-template](https://github.com/opengovsg/ts-template) - Web application template
