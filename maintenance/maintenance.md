@@ -7,10 +7,11 @@ Out of all the phases in a software development lifecycle, the maintenance phase
 The following documentation should exist for each project as it transits into maintenance
 
 - Architecture diagram(s)
-- Sequence diagram(s) (for critical flows)
+- Sequence diagram(s) for critical flows
+- Incident response runbook
 - Build and release guide
 - Checklist of smoke tests
-- Incident response runbook
+- Disaster recovery plans
 
 Having these documentation helps to maintain good knowledge management, which is crucially important in light of inevitable personnel changes over time.
 
@@ -39,6 +40,6 @@ The maintenance team should convene and review the state of the current project 
 1. Security vulnerabilities
 2. Application code & dependencies
 3. Infrastructure & other external environment changes
-4. Documentation
+4. [Existing documentation](#documentation)
 
 Doing this quarterly should help to strike a good balance between effort required and avoiding the deleterious effects of [software rot](https://en.wikipedia.org/wiki/Software_rot).
