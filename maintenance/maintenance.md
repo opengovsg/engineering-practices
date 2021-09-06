@@ -13,9 +13,7 @@ The following documentation should exist for each project as it transits into ma
 - Checklist of smoke tests
 - Disaster recovery plans
 
-Having these documentation helps to maintain good knowledge management, which is crucially important in light of inevitable personnel changes over time.
-
-They are also helpful to get new engineers onboard.
+Having these documentation helps to maintain good knowledge management, which is crucially important in light of inevitable personnel changes over time. These should be centrally linked and easily accessible (e.g. from the GitHub repository or project working document), which can be helpful to onboard new engineers.
 
 Tip: consider using tools such as [lucidchart](https://www.lucidchart.com/) for architecture diagrams, and [plant UML](https://plantuml.com/) for sequence diagrams.
 
