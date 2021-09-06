@@ -6,7 +6,8 @@ Out of all the phases in a software development lifecycle, the maintenance phase
 
 The following documentation should exist for each project as it transits into maintenance
 
-- Architecture diagram
+- Architecture diagram(s)
+- Sequence diagram(s) (for critical flows)
 - Build and release guide
 - Checklist of smoke tests
 - Incident response runbook
@@ -17,7 +18,7 @@ They are also helpful to get new engineers onboard.
 
 ## Test coverage
 
-Ideally, maintenance projects should have ample test coverage (unit, integration etc.), especially around key functionality offered by the application. Tests not only serves as a form of documentation, but also protects future engineers who may not be familiar with the application from accidentally introducing breaking changes. Having sufficient tests can help to offer a baseline level of protection and feedback, making dependency upgrades safer, especially if a key security flaw needs to be patched urgently. Of course, having ample tests also has the additional benefit of making feature development and refactoring faster and safer.
+Ideally, maintenance projects should have ample test coverage (unit, integration etc.), especially around key functionality offered by the application. Tests serve not only as a form of documentation, but also protect future engineers from accidentally introducing breaking changes. Having sufficient tests can help to offer a baseline level of protection and feedback, making dependency upgrades safer, especially if a key security flaw needs to be patched urgently. Of course, having ample tests also has the additional benefit of making feature development and refactoring faster and safer.
 
 ## Security and on-call
 
@@ -27,7 +28,7 @@ On-call and incident response expectations do not change for maintenance project
 
 ## Key person risk
 
-To mitigate [key person risk](https://en.wikipedia.org/wiki/Key_person_insurance), we should strive to have at least 2 maintainers per project to provide a minimum amount of [bus factor](https://en.wikipedia.org/wiki/Bus_factor).
+To mitigate [key person risk](https://en.wikipedia.org/wiki/Key_person_insurance), we should strive to have at least 2 maintainers per project to provide protection against too low a [bus factor](https://en.wikipedia.org/wiki/Bus_factor).
 
 ## Periodic review
 
