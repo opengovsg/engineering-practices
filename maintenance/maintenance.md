@@ -33,11 +33,12 @@ To mitigate [key person risk](https://en.wikipedia.org/wiki/Key_person_insurance
 
 ## Periodic review
 
-The maintenance team should convene and review the state of the current project once per quarter, and evaluate whether any actions are required along the following axes:
+The maintenance team should convene and review the state of the current project quarterly, and evaluate whether any actions are required. These includes:
 
-1. Security vulnerabilities
-2. Application code & dependencies
-3. Infrastructure & other external environment changes
-4. [Existing documentation](#documentation)
+- Application code & dependencies
+- Infrastructure & other external environment changes
+- [Documentation refresh](#documentation)
 
-Doing this quarterly should help to strike a good balance between effort required and avoiding the deleterious effects of [software rot](https://en.wikipedia.org/wiki/Software_rot).
+Reviewing these quarterly should help to strike a good balance between effort required and avoiding the deleterious effects of [software rot](https://en.wikipedia.org/wiki/Software_rot).
+
+Note: security vulnerabilities should be triaged and remediated as per [existing guidelines](../security/vulnerabilities.md).
