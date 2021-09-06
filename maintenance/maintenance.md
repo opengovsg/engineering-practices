@@ -11,7 +11,7 @@ The following documentation should exist for each project as it transits into ma
 - Checklist of smoke tests
 - Incident response runbook
 
-Having these documentation helps to maintain good knowledge management, which is especially important if personnel changes occur.
+Having these documentation helps to maintain good knowledge management, which is crucially important in light of inevitable personnel changes over time.
 
 They are also helpful to get new engineers onboard.
 
