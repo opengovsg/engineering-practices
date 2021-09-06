@@ -78,3 +78,7 @@ Practices are in place for the following areas of software engineering:
 - Facebook
 - Twitter
 - Zendesk
+
+## Policy exemptions
+
+See [here](https://docs.google.com/document/d/1-NwsqQNDb9VydMQsWg3g_cTEuCE96N8qZ0y2asHv0gQ/edit?usp=sharing).
