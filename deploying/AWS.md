@@ -243,7 +243,8 @@ Elastic Beanstalk is not the only means through which an application can be
 served. Alternatives include:
 
 - Using API Gateway and AWS Lambda, optionally with AWS Amplify or other JAM Stack
-  serving the frontend
+  serving the frontend. Refer to `iam-policies/apigateway-lambda-cicd.json` for `cicd`
+  policy for deployment.
 
 - Using AWS App Runner
 
