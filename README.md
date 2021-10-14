@@ -3,7 +3,12 @@
 This directory contains the engineering practices that are observed at
 the Open Government Products division of the Singapore Government.
 
-Practices are in place for the following areas of software engineering:
+This repository is intended to be a living, breathing document that
+evolves as the organisation grows. All OGP engineers are welcome to make
+contributions or propose changes, by filing a pull request using the
+Request For Comment (RFC) template available in this repository.
+
+Practices are currently in place for the following areas:
 
 ## Developer Environment
 
