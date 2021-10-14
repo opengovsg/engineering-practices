@@ -39,6 +39,12 @@ Practices are in place for the following areas of software engineering:
   - Integration
   - End-to-End
 
+- Libraries and tools
+  - [@opengovsg/mockpass](https://www.npmjs.com/package/@opengovsg/mockpass) - mock SingPass/CorpPass/MyInfo server for dev purposes
+  - [@opengovsg/sgid-client](https://www.npmjs.com/package/@opengovsg/sgid-client) - official TypeScript/JavaScript SDK for sgID integration
+  - [@opengovsg/myinfo-gov-client](https://www.npmjs.com/package/@opengovsg/myinfo-gov-client) - type-safe TypeScript/JavaScript SDK for MyInfo integration
+  - [@opengovsg/formsg-sdk](https://www.npmjs.com/package/@opengovsg/formsg-sdk) - official FormSG webhook SDK
+
 ## [Deployments](./deploying)
 
 - Using CI/CD
