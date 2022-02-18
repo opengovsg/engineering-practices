@@ -2,6 +2,8 @@
 
 Developers are expected to use their 1Password account to generate and save *all* passwords and secrets from their time the organisation.
 
+We use 1Password to generate credentials because the credentials are generated with cryptographically strong randomness with sufficient length (>= 20 characters).
+
 ## Personal credentials
 
 Personal account credentials are credentials that are scoped to you as an individual.
@@ -41,3 +43,7 @@ Apart from full-time employees, interns on the relevant project team can also ha
 ## Two-factor authentication (2FA)
 
 Developers are **strongly encouraged** to enable 2FA when available. The 2nd factor should be stored separately from 1Password, using e.g. Authenticator on your mobile device.
+
+## Rotating credentials
+
+Project teams should rotate production credentials and other access keys annually. Credentials no longer in use should be deleted.
