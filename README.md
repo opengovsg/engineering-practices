@@ -75,6 +75,7 @@ Practices are currently in place for the following areas:
 ## Security
 
 - [Vulnerability detection and remediation](./security/vulnerabilities.md)
+- [Accessing production systems](./security/accessing-production-systems.md)
 
 ## Project maintenance
 
