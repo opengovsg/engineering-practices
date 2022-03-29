@@ -9,7 +9,7 @@ We adhere to the following production release practices:
 
 ## High-risk releases
 
-Higher-risk changes that incur the risk of downtime may be scheduled to run later in the night, when the number of users interacting with the system is low. Such releases typically include (but is not limited to):
+Higher-risk changes, and releases with planned of downtime, may be scheduled to run when the number of users interacting with the system is low (late in the night, very early in the morning, or in weekends). Such releases typically include (but is not limited to):
 
 1. Infrastructure migrations or modifications
 2. Database migrations
