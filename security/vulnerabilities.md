@@ -17,7 +17,9 @@ If the issues cannot be remediated in time, documentation should be produced to 
 
 ## Static Analysis Security Testing (SAST) and dependency upgrades
 
-OGP uses [Snyk.io](https://snyk.io) for static analysis and security testing. Each product team should import their GitHub repositories into Snyk for application testing.
+OGP uses [Snyk.io](https://snyk.io) for static analysis and security testing, as well as [dependabot](https://github.com/dependabot) for dependency testing. Each product team should integrate their GitHub repositories into these services. Collectively, these automated tests help to flag out common security issues (e.g. OWASP) and checks dependencies for security flaws against known vulnerability databases (e.g. CWE, CVE).
+
+When these security tests flag a code change, the author of the code change should either remediate the issue, or mark the issue as a false positive, or accept the risks and proceed. If the engineer is unable to make the determination, the issue should be escalated to the team's technical lead, who is ultimately responsible for the security of the codebase.
 
 ### SAST remediation standards
 

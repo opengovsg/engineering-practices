@@ -1,14 +1,17 @@
 # Release practices
 
+## Standard releases
+
 We adhere to the following production release practices:
 
-1. only run production modifications during office hours (unless hotfixing or some other form of emergency)
-2. inform the project team via the appropriate Slack project channel
+1. Only run production modifications during office hours (unless hotfixing or some other form of emergency)
+2. Inform the project team via the appropriate Slack project channel
 
-Examples include
+## High-risk releases
 
-1. Code deployments
-2. Infrastructure changes
-3. Database migrations
+Higher-risk changes, and releases with planned of downtime, may be scheduled to run when the number of users interacting with the system is low (late in the night, very early in the morning, or in weekends). Such releases typically include (but is not limited to):
 
-If a production modification requires a high-risk change (e.g. running database migration scripts), have at least two pairs of eyes looking at the change.
+1. Infrastructure migrations or modifications
+2. Database migrations
+
+For such changes, teams should produce a migration plan before the change, and have at least two pairs of eyes when making any modifications to production infrastructure.
