@@ -54,7 +54,7 @@ Practices are currently in place for the following areas:
 
 - Using CI/CD
 - [Release practices](deploying/release-practices.md)
-- [Deploying to AWS, Step-by-Step](./deploying/aws.md)
+- [Deploying to AWS, Step-by-Step](./deploying/AWS.md)
 - Organising and Naming Environments
 - Hosting
 - Scaling
