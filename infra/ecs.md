@@ -1,0 +1,95 @@
+# Setting up ECS
+
+This guide walks you through setting up your application servers on ECS with deployment using AWS CodeDeploy. The guide assumes you have basic knowledge of AWS and have deployed applications to ElasticBeanstalk (widely used for deploying application servers in OGP).
+
+## Network Preparation
+- 3 public subnets (one in each availability zone in ap-southeast-1)
+  - This is where the load balancer is going to be. So this subnets should have a internet gateway attached via their route table
+- 3 hybrid subnets (one in each availability zone in ap-southeast-1)
+  - For lack of a better term, by hybrid subnet we refer to subnets which have a NAT gateway attached via their route table. They allow outbound connections to the internet but not inbound. You could also use a egress-only internet gateway.
+  - This is where the containers are going to live. Application containers usually need internet access to call external services like Stripe or Twilio. You might also need internet connection if you use a error logging service like Sentry
+- Security groups
+  - Security group for the load balancer
+    - Allow connections on **port** `443` from the internet `0.0.0.0/0`
+    - e.g. `projectname-env-api-lb-sg`
+  - Security group for the containers (ECS tasks)
+    - Allow connections on **port** `10000` from the load balancer security group
+    - e.g. `projectname-env-api-task-sg`
+
+## IAM Preparation
+- Task role (e.g. `projectname-env-ecs-api-task-role`)
+  - Used by the containers to call AWS serviced
+  - Steps:
+    - IAM > Create Role > Elastic Container Service > Elastic Container Service Task
+- Task execution role (e.g. `projectname-env-ecs-task-execution-role`)
+  - Used by ECS to pull container images and publish container logs
+- Policy with write access to CloudWatch logs
+  - actions:
+    - `logs:CreateLogStream`
+    - `logs:PutLogEvents`
+  - resources:
+    - `log-group:/ecs/projectname-env-*:log-stream:*`
+    - `log-group:/ecs/projectname-env-*`
+- Policy with read access to ECR
+    - actions:
+      - `ecr:GetDownloadUrlForLayer`
+      - `ecr:BatchGetImage`
+      - `ecr:DescribeImages`
+      - `ecr:BatchCheckLayerAvailability`
+    - resources:
+      - `arn:aws:ecr:ap-southeast-1:accountnumber:repository/projectname-env-*`
+- Policy with login access to ECR
+    - action:
+      - `ecr:GetAuthorizationToken`
+    - resources:
+      - `*`
+- Attach policies to task execution role
+
+## ECS Setup
+- Create ECS Task Definition
+  - Task definition name
+    - e.g. `projectname-env-api`
+  - Task role
+    - Use the task role crated earlier
+  - Task execution role
+    - Use the task execution role created earlier
+  - Task memory
+    - Use atleast 2048MB for a Node application.
+  - Task CPU
+    - Use atleast 1024 for a Node application.
+- Create temporary target group to be used during the creation of the load balancer
+  - Use "instances" type
+  - Select the right VPC
+- Create the load balancer for ECS
+  - Select `Application Load Balancer`
+  - Name the load balancer
+    - e.g. `projectname-env-api-lb`
+  - Select `Internet-facing`
+  - Select the appropriate VPC
+  - Select the public subnets created earlier
+  - Select the load balancer security group created earlier
+  - Select the temporary target group created earlier
+  - Create load balancer
+- Remove temporary target group from load balancer
+- Create ECS Service
+  - Switch to `launch` type
+  - Select `FARGATE`
+  - Select `Blue/green deployment (powered by AWS CodeDeploy)`
+  - Select the appropriate VPC
+  - Select the hybrid subnets
+  - Select the security group for tasks
+  - Disable auto-assign public IP
+  - Select the application load balancer created in previous steps
+  - Create "Production" listener port 443:HTTPS
+  - Disable "Test" listener
+  - Configure target groups:
+    - Target group 1
+      - Name: `projectname-env-api-tg-a`
+      - Path pattern: `/`
+      - Evaluation order: `1`
+      - Health check path: `/`
+    - Target group 2
+      - Name: `projectname-env-api-tg-b`
+      - Path pattern: `/`
+      - Evaluation order: `1`
+      - Health check path: `/`
