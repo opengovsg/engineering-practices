@@ -93,3 +93,105 @@ This guide walks you through setting up your application servers on ECS with dep
       - Path pattern: `/`
       - Evaluation order: `1`
       - Health check path: `/`
+# Github Action for ECS Deployment
+```
+name: ecs-deployment-action
+# Enironment variables defined here are avaialble on all jobs, steps in this workflow
+concurrency:
+  # Only one instance of this workflow will run at a time
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+env:
+  STAGING_BRANCH: 'develop'
+  PRODUCTION_BRANCH: 'master'
+  AWS_REGION: 'ap-southeast-1'
+  # The container name is the same for both staging and production ECS tasks
+  ECS_TASK_CONTAINER_NAME: 'projectname-api'
+on:
+  push:
+    branches: ['develop', 'master']
+jobs:
+  ecs-deployment:
+    name: Deploy to AWS ECS
+    runs-on: ubuntu-latest
+    steps:
+        # This steps checks out the code (Not done by default)
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Configure deployment environment name for staging
+        # This step configures environment variables based on current branch
+        # Write envvars to $GITHUB_ENV so that they are available in the following steps too
+        if: ${{ github.ref == format('refs/heads/{0}', env.STAGING_BRANCH) }}
+        run: |
+          echo 'Set deployment env to STAGING'
+          echo "DEPLOYMENT_ENV=STAGING" >> $GITHUB_ENV
+          echo "ECR_REPOSITORY=projectname-env-api" >> $GITHUB_ENV
+          echo "ECS_TASK_DEFINITION_NAME=projectname-env-api" >> $GITHUB_ENV
+          echo "ECS_CLUSTER_NAME=projectname-env-ecs-cluster" >> $GITHUB_ENV
+          echo "ECS_SERVICE_NAME=projectname-env-api" >> $GITHUB_ENV
+          echo "CODEDEPLOY_APPLICATION=AppECS-projectname-env-ecs-cluster-projectname-env-api" >> $GITHUB_ENV
+          echo "CODEDEPLOY_DEPLOYMENT_GROUP=DgpECS-projectname-env-ecs-cluster-projectname-env-api" >> $GITHUB_ENV
+      - name: Configure deployment environment name for production
+        # This step configures environment variables based on current branch
+        # Write envvars to $GITHUB_ENV so that they are available in the following steps too
+        if: ${{ github.ref == format('refs/heads/{0}', env.PRODUCTION_BRANCH) }}
+        run: |
+          echo 'Set deployment env to PRODUCTION'
+          echo "DEPLOYMENT_ENV=PRODUCTION" >> $GITHUB_ENV
+          echo "ECR_REPOSITORY=projectname-env-api" >> $GITHUB_ENV
+          echo "ECS_TASK_DEFINITION_NAME=projectname-env-api" >> $GITHUB_ENV
+          echo "ECS_CLUSTER_NAME=projectname-env-ecs-cluster" >> $GITHUB_ENV
+          echo "ECS_SERVICE_NAME=projectname-env-api" >> $GITHUB_ENV
+          echo "CODEDEPLOY_APPLICATION=AppECS-projectname-env-ecs-cluster-projectname-env-api" >> $GITHUB_ENV
+          echo "CODEDEPLOY_DEPLOYMENT_GROUP=DgpECS-projectname-env-ecs-cluster-projectname-env-api" >> $GITHUB_ENV
+      - name: Configure AWS credentials
+        # This step configures env with AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID  }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY  }}
+          aws-region: ${{ env.AWS_REGION }}
+      - name: Login to Amazon ECR
+        # This step authenticates the Docker client with AWS ECR so that we can push images to it
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+      - name: Build, tag, and push image to Amazon ECR
+        # This step builds a Docker image with our codebase and pushes the image to ECR
+        id: build-image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: ${{ env.ECR_REPOSITORY }}
+          IMAGE_TAG: ${{ github.sha }}
+        # This step builds the image and adds the following tags to it: latest and current SHA commit
+        # ::set-output name=image::XXXXXX => Sets the output of this step to be used in other steps
+        # e.g. steps.build-image.outputs.image (steps.{step_name}.outputs.{key_name})
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
+          docker push --all-tags $ECR_REGISTRY/$ECR_REPOSITORY
+          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+      - name: Download task definition
+        # This step saves curent task definition from ECS into task-definition.json
+        run: |
+          aws ecs describe-task-definition --task-definition $ECS_TASK_DEFINITION_NAME --query taskDefinition > task-definition.json
+      - name: Fill in the new image ID in the Amazon ECS task definition
+        # This step updates the image url in task-definition.json with the url of image we just pushed
+        id: task-def
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: task-definition.json
+          container-name: ${{ env.ECS_TASK_CONTAINER_NAME }}
+          image: ${{ steps.build-image.outputs.image }}
+      - name: Deploy Amazon ECS task definition
+        # This step deploys the new task definition with ECS and Code Deploy
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          cluster: ${{ env.ECS_CLUSTER_NAME }}
+          service: ${{ env.ECS_SERVICE_NAME }}
+          wait-for-service-stability: true
+          # The appspec.js is in root of the codebase.
+          # This action will replace the TaskDefinition property with the task definition version created above.
+          codedeploy-appspec: appspec.json
+          codedeploy-application: ${{ env.CODEDEPLOY_APPLICATION }}
+          codedeploy-deployment-group: ${{ env.CODEDEPLOY_DEPLOYMENT_GROUP }}
+```
