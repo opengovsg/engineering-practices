@@ -94,7 +94,7 @@ This guide walks you through setting up your application servers on ECS with dep
       - Evaluation order: `1`
       - Health check path: `/`
 # Github Action for ECS Deployment
-```
+``` yaml
 name: ecs-deployment-action
 # Enironment variables defined here are avaialble on all jobs, steps in this workflow
 concurrency:
