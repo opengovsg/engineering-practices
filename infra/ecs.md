@@ -94,6 +94,22 @@ This guide walks you through setting up your application servers on ECS with dep
       - Evaluation order: `1`
       - Health check path: `/`
 # Github Action for ECS Deployment
+## Summary
+1. Checkout repository
+2. Add ECS and CodeDeploy confguration as environment variables
+    - `DEPLOYMENT_ENV` - staging/production
+    - `ECR_REPOSITORY` - Docker image repository name on AWS ECR
+    - `ECS_CLUSTER_NAME` - Cluster name on AWS ECS (The infra the containers run on. Can be EC2 or Fargate. For fargate, you pay for CPU and RAM hours, AWS manages the underlying instances.)
+    - `ECS_SERVICE_NAME` - A service is similar to ElasticBeanstalk application. The service is loadbalanced and can be scaled.
+    - `ECS_TASK_DEFINITION_NAME` - A task is similar to a pod in Kubernetes or EC2 instance in ElasticBeanstalk. You scale by increasing the number of tasks running in a service.
+    - `CODEDEPLOY_APPLICATION` - The name for the application
+    - `CODEDEPLOY_DEPLOYMENT_GROUP` - The name for the deployment group. You could also choose to share the same application and have separate deployment groups for each environment.
+3. Configure AWS credentials
+4. Log into AWS ECR
+5. Build, tag, and push image to Amazon ECR
+6. Get latest ECS task definition
+7. Update the image url in the task definition to point to the latest image we just created
+8. Initiate a deployment to ECS using CodeDeploy
 ``` yaml
 name: ecs-deployment-action
 # Enironment variables defined here are avaialble on all jobs, steps in this workflow
