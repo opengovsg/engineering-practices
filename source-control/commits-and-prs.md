@@ -133,7 +133,7 @@ All engineers are required to review PRs as part of their duties.
 PR reviews foster discussions on implementation details, algorithms, feature sets, etc. They are an excellent avenue for learning for everyone involved and can help surface potential issues. Review comments typically touch on subjects such as:
 - Feedback on code structure, abstractions, encapsulation, testability, security, etc.
 - Suggest alternative APIs, libraries, or technologies
-- Identify edge cases
+- Identify edge cases and potential side effects
 - Gain consensus on implementation as a team
 
 Code is read much more than it is written. PR reviews ensure that changes are legible by multiple people early, before they are integrated into the code base.
